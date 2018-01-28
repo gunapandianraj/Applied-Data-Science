@@ -1,0 +1,32 @@
+Module 3 :Charting fundamental:
+
+Subplots:
+
+##
+Multiple plots side by side 
+
+##
+specifiy columns and rows and return currnet specified axes 
+plt.subplot(1,2,1)
+one row ,two column and return first axes of the plot
+
+##
+ax1 = plt.subplot(1,2,1)
+plt.plot(linerdata,"-o")
+ax2 = plt.subplot(1,2,2,sharex=true)
+
+##
+plt.subplot(1,2,1) is same as plt.subplot(121)
+
+## 
+plt.gcf().get_axes()
+plt.gcf().canvas.draw()
+
+Histogram::
+
+is the bar chart x axis is given observation and y axis freq the observation
+
+Grid spec :
+
+Allow you map axes over multiple cells 
+
