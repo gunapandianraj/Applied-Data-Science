@@ -1,0 +1,164 @@
+A supervised learning model has been built to predict whether someone is infected with a new strain of a virus. The probability of any one person having the virus is 1%. Using accuracy as a metric, what would be a good choice for a baseline accuracy score that the new model would want to outperform?
+
+
+
+Model Evaluation and selection:
+
+Accuracy in imbalanced classes is a fail
+
+Confusion matrix 
+
+false postive 
+true positive 
+
+false negative (predicted false when actual  label is true)
+false postive (predicted true when actual  label is false)
+
+Classification error :
+
+FP + FN / TN + TP + FP +FN (or ) 1- accuray 
+
+
+Recall :  cancer case scenario when we want no flase negative prediction
+
+TP / TP + FN 
+
+
+Precision : web search case when we want no false postiive prediction
+
+TP / TP + FP 
+
+
+False positive rate (FPR):
+
+FPR = FP / TN + TP specifity 
+
+F1 Score :
+
+Combaning precision and recall
+
+f1 = 2 * Precision * Recall / precision + Recall
+
+2*TP / 2*TP + FN + FP
+
+beta f1 score 
+
+Precison - oriented users : beta = 0.5 (false positive hurts performance more than false negatives)
+
+Recall-oriented users : beta = 2 (false negatives hurt performance more than false positives)
+
+
+Classifier Decision Funtion :
+-------------------------------
+ how confident a model on prediciting positive and negative class 
+
+
+ poistive magnitude and negative magnitude 
+
+Predicted Probability of Class Membership(predict_proba) :
+----------------------------
+  Class 1 if threshold > 0.50 
+  increasing threshold affects the precision
+
+
+Precision - Recall Curves:
+----------------------------
+ changes of precision and recall on changing classifier decision thershold.
+
+ROC Curves receiver operating curves :
+-------------------------------
+
+ Area under curve of roc 
+
+ 0 -1 
+
+ 1 being good classifier
+
+Multi Class Evaluation:
+------------------------
+
+ *) Multi - Class Evaluation of the binary case
+
+ *) Collection of true vs predicted binarry outcomes , one per class 
+
+
+ *) Confusion matrices are especially userful
+
+ *)Classification report
+
+ Overall evaluation metics are averages across classes
+
+Macro vs Micro Average :
+ 
+ Macro - average :
+  Each class has equal weight
+
+  compute the metric within each class
+
+  average resulting metric a cross the classes 
+
+  1/ 3 in case of 3 classes
+
+ Micro  -Average :
+  each instance has equal weight.
+  largest classes have most influences 
+ 
+ *) if classes have equal no of instance micro and macro averages are same 
+
+ *) if some classes have larger instance then others 
+ weight towards the largest one use micro 
+ for small use macro
+
+ if micro average is lower than macro average then the larger classes for poor metric performance
+
+
+Regress Evaluation :
+------------------------
+ Mean_absoulte_error (absoulte diff robust to outlires)
+ Mean_squared_error ()
+ median_absolute_error(robust to utliers)
+
+
+Evalution metrics :
+
+ Traning and test scores..
+
+ K fold cross validation k folds 
+
+
+
+Others to see :
+
+Learning curve : How much does accuracy (or other metric ) change as a funtion of the amount of training data
+
+sesitivity analysis : How much does accuracy (or other metic ) changes as a funtion of key learning parameter values 
+
+
+
+
+
+
+ 
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

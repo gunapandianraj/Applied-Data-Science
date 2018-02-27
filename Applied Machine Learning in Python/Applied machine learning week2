@@ -1,0 +1,331 @@
+KNN :(regression and classifier)
+----------------------------------
+
+Feature representation 
+Data instance/samples/examples (X)
+Target Values (y)
+
+
+1)Model /Estimator
+
+-- Model fitting produces a "trained model"
+
+-- Training is process estimating model parameters
+
+2)Evalution method
+
+KNN vs linear model
+
+Knn makes few assumption abt sturcture of data and gives potentially accurate but sometimes unstale predictions 
+
+linear models make strong  assumption about the structure of the data and give stable but potentially inaccurate predictions 
+
+
+model :
+--------
+funtion that maps the features to its dependent variables (y)
+
+Overfitting:
+-------------
+making complex model works well on traning data and not genralizef for new examples
+
+Underfitting:
+-------------
+not fitting on tranning data as well as test data
+
+
+KNN : parameter tunning:
+-------------------------
+
+k = 1 .. assing to nearest one training point class
+
+k =2 ..find the 2 nearset training points and call for simple majority vote 
+
+Knn regression :
+---------------
+
+k = 3 instead of majority vote average the three nearest points value to predict the value.
+
+regression score called r^2:
+measure how well a prediciton model for regression fits the data
+
+score is between 0 to 1 
+
+
+Linear models :
+--------------------
+ A linear model is a sum of weighted variables that predicts a target output value given an input data instance..
+
+ W - > feature weights / model coefficients
+
+ b - > constant bias term / intercept
+
+ input instance = x = (x0)
+
+ predicted output = y = w0*0 +b
+
+ parameters to estimate w0 (slope)
+ b(y-intecept)
+
+estimator :
+----------------
+ *)ordinary least square  or mean squared error(squared differences between actual vs predicted).
+
+ *)finding the y intercept and coeffiect that lowers mean squared error..
+
+ *)no parameters to control model complexity.
+
+ *)can be always represented by straight line.
+
+KNN vs Least square linear regression:
+---------------------------------------
+
+ Knn dont analysis the structure of data. and lend to fail during nosie structure
+
+ linear makes strong assuption about the structure .make stable model.
+
+
+
+Ridge regression
+-------------------
+ reguraized least square regression
+
+ L2 regularization : minimize sum of square of w entries
+
+ the influence of regularization term is controlled by aplha
+
+ higher alpha means more regurization and simpler model.
+
+
+ increases and decrease coeffiect that affects features using regurization
+
+ *) regulrization works really well if the amount of data in training is less compared to number of features in your model
+
+ *) reguralization is less important if the amount of data in traning set increases
+
+feature preprocessing:
+----------------------
+ min - max scaling 
+
+ make all features same range 
+
+ min = 0 and max =1 
+
+
+Lasso regression:
+-------------------
+ L1 regularization
+
+
+ l1 regularization minimize the sum of the absolute values of the coefficients
+ this has the effect of setting the weights in w to zero for the least influential variables .. 
+
+ This is called spares solution : a kind of feature selection
+
+ aplha controls the amount of regularization 
+
+ ridge vs lasso :
+ -- small /medium sized effects : use ridge 
+ -- only a few variables with medium/large effect: use lasso
+
+
+
+polynomial features with linear regression:
+-------------------------------------------
+ adding more features.
+
+ x = (x0 ,x1)
+
+ x' = (x0,x1,x02,x0x1,x12)
+
+ Generate new features consisting of all polynomial combinations of the original two features
+
+ adding this polynomial makes modle complex to better fit the data
+
+ adding non linear to linear model to capture 
+
+ non linear bieases fuction
+
+ polynominal tends to overfit offten used with regurization
+
+Logistic regression:
+---------------------
+ Classification 
+ sum of weighted features  with bias term and gives to non linear funtion to produce  limited between 0 -1 
+
+ then perdict the probility of class between 0 - 1 (binary classification)
+
+ C - > regularization 
+
+ higher values of C less regularization (tries to fit the data as well as possiable)
+
+ lower value fo c means bias 
+
+ l2 reg is turned on by default
+
+Support vector machine:(linear classification)
+-----------------------
+
+ after linear model apply sign fuction
+
+ x1- x2 =0
+ w1 = 1 , w2 = -1
+
+ creates the margin around descion boundary
+
+ maximum marigin classifier
+
+ the linear classifier with maximum margin is a linear support vector machine (lsvm)
+
+ regularization C parameter:
+  
+  larger value of C : less regularization
+
+  larger values of C fits the data well as possiable.
+
+  Each inidividual data point is important to classify correctly
+
+  smaller value : more regularization:
+
+  more tolerant to error on individal datat points
+
+Multi class linear classification:
+----------------------------------
+
+one vs all 
+
+
+Kernelized support vector machine (for non linear classification):
+-------------------------------------
+  takes one dimenstional data to higher dimnetional space then do linear classification . then bring to one dimentional
+
+  original input space to feature space :
+  ----------------------------------------
+
+ RBF kernal :(radial basis)
+
+ parameter :
+  small gama - broder smother decision  ( larger similarity radius,points farther apart are considered similar. which results in more points being grouped together  )
+
+  larger gama - colse border 
+
+
+  if gama is large C will have no effect . 
+
+  if gama is small C will work normal like in other classifiers 
+
+
+Cross validation:
+-----------------
+ 
+ K fold validation (number of folding of train data )
+
+ stratified cross validation 
+
+ leave - one -out cross validiation
+
+ evaluate a train model
+
+
+Decision tree :
+----------------
+  board question are asked first 
+
+  Informative  - > best split should give best homogenues bins
+
+
+  Information gain is used to find the best split
+
+  prevent the over fitting :
+
+  puring  - max depth , max leaf nodes
+
+  features importances :
+
+  how important a feature is to a overall perdiction accuray 
+
+  a number between 0 and 1 assigned to each features 
+
+  feature importances of 0 not really important feature
+
+  all feature importances are normailzed to sum to 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
